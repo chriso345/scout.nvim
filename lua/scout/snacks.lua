@@ -106,7 +106,11 @@ function M.tmux_picker(cfg)
         ctx.preview:set_title("No selection")
         return
       end
-      local content = vim.fn.systemlist(cfg.preview.cmd .. " " .. ctx.item.data.path)
+
+      local command = cfg.preview.cmd
+      command = command:gsub("{path}", ctx.item.data.path)
+
+      local content = vim.fn.systemlist(command)
       ctx.preview:set_lines(content)
     end,
 

@@ -62,8 +62,8 @@ M.defaults = {
   -- Preview configuration: command used to generate preview content and titles
   -- Switched to a simple directory listing by default to improve portability.
   preview = {
-    -- Command run with the selected path appended, e.g. "ls -la /path/to/dir"
-    cmd = "ls -la",
+    -- Command run with the selected path, e.g. "ls -la /path/to/dir"
+    cmd = "ls -la {path}",
   },
 }
 
