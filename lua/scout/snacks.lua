@@ -112,6 +112,10 @@ function M.tmux_picker(cfg)
 
       local content = vim.fn.systemlist(command)
       ctx.preview:set_lines(content)
+
+      if cfg.preview.highlight then
+        ctx.preview:highlight(cfg.preview.highlight)
+      end
     end,
 
     layout = cfg.layout,
